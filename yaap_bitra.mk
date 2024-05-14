@@ -18,15 +18,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Matrixx stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common YAAP stuff.
+$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
 
-# Opiss Cam
-#TARGET_USES_OPLUS_CAMERA := true
-
-# Matrixx internal properties
-TARGET_HAS_UDFPS := true
+#yaap properties
+TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_BUILD_GAPPS := true
 TARGET_ENABLE_BLUR := true
+TARGET_HAS_UDFPS := true
 TARGET_EXCLUDES_AUDIOFX := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
@@ -34,23 +33,7 @@ TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_SUPPORTS_CALL_RECORDING := true
 TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
-
-#GAPPS
-WITH_GMS := true
-
-#Extra Gapps
-BUILD_GOOGLE_CONTACTS := true
-BUILD_GOOGLE_DIALER := true
-BUILD_GOOGLE_MESSAGE := true
-
-# Matrixx
-MATRIXX_BUILD_TYPE := Unofficial
-MATRIXX_MAINTAINER := Arsalan_Zeus
-MATRIXX_CHIPSET := SM8250
-MATRIXX_BATTERY := 5000mAh
-MATRIXX_DISPLAY := 1080X2400
-TARGET_EXCLUDES_AUDIOFX := true
-
+TARGET_BOARD_PLATFORM := kona
 # Enable extra UDFPS animations
 EXTRA_UDFPS_ANIMATIONS := true
 
@@ -64,7 +47,7 @@ TARGET_INCLUDE_VOICERECORDER := true
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_bitra
+PRODUCT_NAME := yaap_bitra
 PRODUCT_DEVICE := bitra
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3370
