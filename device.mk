@@ -51,7 +51,7 @@ PRODUCT_PACKAGES += \
 endif
 
 # Opiss Cam
-$(call inherit-product, vendor/oplus/camera/opluscamera.mk)
+$(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/oplus_camera_config:$(TARGET_COPY_OUT_ODM)/etc/camera/config/oplus_camera_config \
